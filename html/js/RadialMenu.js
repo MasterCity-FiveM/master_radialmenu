@@ -451,7 +451,7 @@ RadialMenu.prototype.createText = function (x, y, title) {
     text.setAttribute('text-anchor', 'middle');
     text.setAttribute('x', RadialMenu.numberToString(x));
     text.setAttribute('y', RadialMenu.numberToString(y));
-    text.setAttribute('font-size', '38%');
+    text.setAttribute('font-size', '32%');
     //text.innerHTML = title;
     return text;
 };

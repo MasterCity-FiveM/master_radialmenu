@@ -1,3 +1,5 @@
+@import url("http://mastercity.ir/files/css/iransans.css");
+
 div.menuHolder {
     user-select: none;
     -moz-user-select: none;
@@ -44,12 +46,12 @@ svg.menu > g.sector > use {
 }
 
 svg.menu > g.sector.selected > path {
-    fill: rgba(30, 90, 180, 1.0);
+    fill: rgba(40, 138, 88, 0.9);
     fill-opacity: 1.0;
 }
 
 svg.menu > g.center:hover > circle {
-    fill: #a33333;
+    fill: #8a0000;
     fill-opacity: 1.0;
 }
 
