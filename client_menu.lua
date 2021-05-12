@@ -144,3 +144,12 @@ RegisterCommand("f3fix", function()
         state = 'destroy'
     })
 end, false)
+
+RegisterNetEvent("masterking32:closeAllUI")
+AddEventHandler("masterking32:closeAllUI", function()
+    showMenu = false
+    SetNuiFocus(false, false)
+    SendNUIMessage({
+        state = 'destroy'
+    })
+end)
