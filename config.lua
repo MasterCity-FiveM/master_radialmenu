@@ -3,8 +3,8 @@ rootMenuConfig =  {
         id = "emote",
         displayName = "ایموت",
         icon = "#emotes",
-        enableMenu = function()
-            return not isDead
+		enableMenu = function()
+            return true
         end,
         subMenus = {"emote:emotes", "emote:dance", "emote:cigar", "emote:clipboard", "emote:notepad", "emote:cop2"}
     },
@@ -12,8 +12,8 @@ rootMenuConfig =  {
         id = "accessories",
         displayName = "لوازم",
         icon = "#accessories",
-        enableMenu = function()
-            return not isDead
+		enableMenu = function()
+            return true
         end,
         subMenus = {"accessories:mp3player", "accessories:hlaptop"}
     },
@@ -25,6 +25,7 @@ rootMenuConfig =  {
         enableMenu = function()
             return (IsPedInAnyVehicle(PlayerPedId(), false))
         end,
+		subMenus = {"vehicle:changeseatDrvier", "vehicle:changeseat", "vehicle:engine", "vehicle:inlight", "vehicle:doors"}
     }
 }
 
@@ -75,6 +76,34 @@ newSubMenus = {
         title = "Laptop",
         icon = "#accessories-hlaptop",
         functionName = "master_hlaptop:OpenUI"
+    },
+	
+	['vehicle:changeseatDrvier'] = {
+        title = "راننده",
+        icon = "#vehicle-changeseat",
+        functionName = "masterking32:SeatDriver",
+        functionParameters = "-1"
+    },
+	['vehicle:changeseat'] = {
+        title = "شاگرد",
+        icon = "#vehicle-changeseat",
+        functionName = "masterking32:SeatDriver",
+        functionParameters = "0"
+    },
+	['vehicle:engine'] = {
+        title = "موتور",
+        icon = "#vehicle-engine",
+        functionName = "master_radialmenu:EngineToggle"
+    },
+	['vehicle:inlight'] = {
+        title = "داخلی",
+        icon = "#vehicle-inlight",
+        functionName = "master_radialmenu:InteriorLight"
+    },
+	['vehicle:doors'] = {
+        title = "دربها",
+        icon = "#vehicle-door",
+        functionName = "master_radialmenu:DoorControl"
     },
 }
 

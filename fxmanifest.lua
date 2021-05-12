@@ -4,7 +4,6 @@ game "gta5"
 
 client_script {
 	"config.lua",
-	"events.lua",
     "client_menu.lua"
 }
 

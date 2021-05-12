@@ -48,7 +48,7 @@ Citizen.CreateThread(function()
                                 if i % MAX_MENU_ITEMS == 0 and i < (#menuConfig.subMenus - 1) then
                                     previousMenu[MAX_MENU_ITEMS + 1] = {
                                         id = "_more",
-                                        title = "Daha fazla",                          
+                                        title = "بیشتر",                          
                                         icon = "#more",
                                         items = currentElement
                                     }
@@ -153,3 +153,45 @@ AddEventHandler("masterking32:closeAllUI", function()
         state = 'destroy'
     })
 end)
+
+RegisterNetEvent("master_radialmenu:EngineToggle")
+AddEventHandler("master_radialmenu:EngineToggle", function()
+    local vehicle = GetVehiclePedIsIn(PlayerPedId(), false)
+    if vehicle ~= nil and vehicle ~= 0 and GetPedInVehicleSeat(vehicle, 0) then
+        SetVehicleEngineOn(vehicle, (not GetIsVehicleEngineRunning(vehicle)), false, true)
+    end
+end)
+
+RegisterNetEvent("master_radialmenu:InteriorLight")
+AddEventHandler("master_radialmenu:InteriorLight", function()
+	local playerPed = GetPlayerPed(-1)
+    if (IsPedSittingInAnyVehicle(playerPed)) then
+		local vehicle = GetVehiclePedIsIn(playerPed, false)
+		if IsVehicleInteriorLightOn(vehicle) then
+			SetVehicleInteriorlight(vehicle, false)
+		else
+			SetVehicleInteriorlight(vehicle, true)
+		end
+	end
+end)
+
+RegisterNetEvent("master_radialmenu:DoorControl")
+AddEventHandler("master_radialmenu:DoorControl", function()
+	DoorControl(0)
+	DoorControl(1)
+	DoorControl(2)
+	DoorControl(3)
+end)
+
+
+function DoorControl(door)
+	local playerPed = GetPlayerPed(-1)
+	if (IsPedSittingInAnyVehicle(playerPed)) then
+		local vehicle = GetVehiclePedIsIn(playerPed, false)
+		if GetVehicleDoorAngleRatio(vehicle, door) > 0.0 then
+			SetVehicleDoorShut(vehicle, door, false)
+		else
+			SetVehicleDoorOpen(vehicle, door, false)
+		end
+	end
+end
