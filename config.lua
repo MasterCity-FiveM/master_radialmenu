@@ -6,7 +6,7 @@ rootMenuConfig =  {
 		enableMenu = function()
             return true
         end,
-        subMenus = {"emote:emotes", "emote:dance", "emote:cigar", "emote:clipboard", "emote:notepad", "emote:cop2"}
+        subMenus = {"emote:emotes", "emote:chair", "emote:dance", "emote:cigar", "emote:clipboard", "emote:notepad", "emote:cop2"}
     },
     {
         id = "accessories",
@@ -25,7 +25,7 @@ rootMenuConfig =  {
         enableMenu = function()
             return (IsPedInAnyVehicle(PlayerPedId(), false))
         end,
-		subMenus = {"vehicle:changeseatDrvier", "vehicle:changeseat", "vehicle:engine", "vehicle:inlight", "vehicle:doors"}
+		subMenus = {"vehicle:engine", "vehicle:glovbox", "vehicle:changeseatDrvier", "vehicle:changeseat", "vehicle:inlight", "vehicle:doors"}
     }
 }
 
@@ -45,7 +45,13 @@ newSubMenus = {
         title = "سیگار",
         icon = "#emotes-cigar",
         functionName = "dpemotes:StartEmote",
-        functionParameters = "cigar"
+        functionParameters = "smoke2"
+    },
+    ['emote:chair'] = {
+        title = "صندلی",
+        icon = "#emotes-chair",
+        functionName = "dpemotes:StartEmote",
+        functionParameters = "sitchair2"
     },
     ['emote:clipboard'] = {
         title = "یادداشتها",
@@ -65,7 +71,6 @@ newSubMenus = {
         functionName = "dpemotes:StartEmote",
         functionParameters = "cop2"
     },
-	
 	
 	['accessories:mp3player'] = {
         title = "MP3 Player",
@@ -104,6 +109,11 @@ newSubMenus = {
         title = "دربها",
         icon = "#vehicle-door",
         functionName = "master_radialmenu:DoorControl"
+    },
+	['vehicle:glovbox'] = {
+        title = "داشبورد",
+        icon = "#vehicle-glovbox",
+        functionName = "Master_Inventory:OpenGlovBox"
     },
 }
 
