@@ -36,7 +36,9 @@
 
                 } else if (eventData.state === 'destroy') {
                     $("#navMenu").remove();
-                    menu.destroy();
+					if(menu != null) {
+						menu.destroy();
+					}
                 }
             });
             window.addEventListener("keyup", function onEvent(event) {
